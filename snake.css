@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    background: #111;
+    color: white;
+    font-family: Arial;
+  }
+  
+  #dashboard {
+    margin: 10px;
+    font-size: 20px;
+    background: #222;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+  }
+  
+  canvas {
+    background: black;
+    display: block;
+    margin: auto;
+  }

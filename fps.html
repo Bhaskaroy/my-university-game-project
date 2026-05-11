@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* body {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  
+    /* 🔥 Premium gaming background */
+    background: url("https://images.unsplash.com/photo-1535223289827-42f1e9919769") no-repeat center center/cover;
+  
+    color: white;
+    min-height: 100vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  
+  .games {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* .card {
+    background: #111;
+    padding: 20px;
+    width: 220px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: 0.3s;
+  } */
+  
+  .card {
+    position: relative;
+    width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  /* Background image */
+  .card-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+    transition: 0.5s;
+  }
+  
+  /* Overlay dark gradient */
+  .card::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  }
+  
+  /* Content */
+  .card-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 2;
+  }
+  
+  
+  /* .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0,255,255,0.5);
+  } */
+  
+  /* Hover effect */
+  .card:hover .card-bg {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+  }
+  
+  /* Glow effect */
+  .card:hover {
+    box-shadow: 0 0 25px rgba(0,255,255,0.5);
+  }
+  
+  .card h2 {
+    margin-bottom: 10px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #aaa;
+  }
+  
+  button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    background: cyan;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  button:hover {
+    background: #00ffff;
+    transform: scale(1.05);
+  }
+  
