@@ -1,34 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>Game Zone 🎮</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game Zone</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <div class="user-bar">
+    <div class="user-info">
+      <div class="avatar">👤</div>
+      <div class="user-details">
+        <h3 id="userEmail"></h3>
+      </div>
+    </div>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </div>
 
-  <div class="container">
-    <h1>🎮 Hello Tuya Rani</h1>
-  <p class="subtitle">I Love You</p>   <!-- Game Zone   Play Classic Web Games-->
 
-    <div class="games">
+  <main class="app-shell">
+    <header class="hero">
+      <div class="hero-title">
+        <img src="https://plus.unsplash.com/premium_photo-1682125220008-006e43a6896a?q=80&w=880&auto=format&fit=crop"
+          alt="Game Controller">
+        <h1>PixelRush</h1>
+      </div>
+      <p>Your personal game library</p>
+    </header>
 
-      <div class="card">
-        <h2>🐍 Snake Game</h2>
-        <p>Classic snake game built with JavaScript</p>
+    <section class="library">
+      <div class="game-row">
+        <img
+          src="https://images.unsplash.com/photo-1717501217911-a598ed4c4023?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Snake Game">
+        <div class="game-meta">
+          <h2>Snake Game</h2>
+          <p>Classic arcade snake experience rebuilt for the web.</p>
+        </div>
         <button onclick="goSnake()">Play Now</button>
       </div>
 
-      <div class="card">
-        <h2>🔫 FPS Game</h2>
-        <p>Old-style shooting game built with Python</p>
+      <div class="game-row">
+        <img src="https://imgs.crazygames.com/tags/2d/thumb-1751545521193.png?format=auto&quality=75&metadata=none"
+          alt="FPS Game">
+        <div class="game-meta">
+          <h2>FPS Game</h2>
+          <p>Fast-paced retro shooting action with classic gameplay.</p>
+        </div>
         <button onclick="goFPS()">Play Now</button>
       </div>
 
-    </div>
-  </div>
+      <div class="game-row">
+        <img
+          src="https://play-lh.googleusercontent.com/XHu1Ni97uMWz1ssWq6VclImlkiEwWHnj2y4I_Y6m_ZpOyF-yaLJTV5H8W9tsaXYS595Q=w526-h296-rw"
+          alt="Drive Mad">
+        <div class="game-meta">
+          <h2>Drive Mad</h2>
+          <p>Physics-based driving chaos with fun obstacle challenges.</p>
+        </div>
+        <button onclick="goDrive()">Play Now</button>
+      </div>
+    </section>
+  </main>
 
+  <script type="module">
+    import { auth } from "./app.js";
+    auth.onAuthStateChanged(user => {
+      if (!user) {
+        window.location.href = "login.html";
+      } else {
+        document.getElementById("userEmail").innerText = user.email;
+      }
+    });
+  </script>
   <script src="script.js"></script>
-
 </body>
+
 </html>
